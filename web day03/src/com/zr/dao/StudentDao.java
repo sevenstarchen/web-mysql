@@ -110,7 +110,7 @@ public class StudentDao {
 			DBConnection.close(null, ps, conn);
 		}
 	}
-	public void chsert(int id,String name,String url,int alexa,String country){
+	public void chsert(int id,int id2,String name,String url,int alexa,String country){
 		Connection conn = DBConnection.getConn();
 		String sql = "insert into websites values(?,?,?,?,?)";
 		String sql2 = "update websites set id=?,name=?,url=?,alexa=?,country=? where id =?";
@@ -146,7 +146,7 @@ public class StudentDao {
 				ps1.setString(3, url);
 				ps1.setInt(4, alexa);
 				ps1.setString(5, country);
-				ps1.setInt(6,id);
+				ps1.setInt(6,id2);
 				ps1.executeUpdate();
 			}
 			count=0;

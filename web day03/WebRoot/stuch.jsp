@@ -27,7 +27,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     This is my JSP page. <br>
      <form method="get" action="StudentChaServlet">
      <h1>信息输入</h1>
-      旧编号		:	<%=request.getParameter("id")%><br />
+    <% String s=request.getParameter("id");
+    session.setAttribute("testSession",s);
+     %><br />
+     
+      旧编号		:	<text  name="id2" ><%=request.getParameter("id")%> <br />
         编号			:	<input name="id"><br />
   	名称			:	<input name="name"><br />
   	网址			:	<input name="url"><br />

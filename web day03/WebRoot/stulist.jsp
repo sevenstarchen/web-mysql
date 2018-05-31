@@ -39,33 +39,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <table>
     	<tr>
-    		<td>编号</td>
-    		<td>名称</td>
-    		<td>URL</td>
-    		<td>ID</td>
-    		<td>国籍</td>
-    		<td>操作</td>
+    		<td align="center" valign="middle">编号</td>
+    		<td align="center" valign="middle">名称</td>
+    		<td align="center" valign="middle">URL</td>
+    		<td align="center" valign="middle">ID</td>
+    		<td align="center" valign="middle">国籍</td>
+    		<td align="center" valign="middle">操作</td>
     	</tr>
     	<%
     	if(list != null){
     		for(Student s : list){ 
         		%>
         		<tr>
-        			<td><%=s.getId() %></td>
-        			<td><%=s.getStuno() %></td>
-        			<td><%=s.getName() %></td>
-        			<td><%=s.getGender() %></td>
-        			<td><%=s.getAge() %></td>
-        			<td><a href="StudentDelServlet?id=<%=s.getId() %>">删除</a>
-        			<a href="stuch.jsp">修改</a>
-        			<a href="stuins.jsp?id=<%=s.getId() %>">增加</a>
-        			<a href="stuser.jsp">查找</a>
-        			</td>
+        			<td align="center" valign="middle"><%=s.getId() %></td>
+        			<td align="center" valign="middle"><%=s.getStuno() %></td>
+        			<td align="center" valign="middle"><%=s.getName() %></td>
+        			<td align="center" valign="middle"><%=s.getGender() %></td>
+        			<td align="center" valign="middle" ><%=s.getAge() %></td>
+        			<td><a  style="display:block;text-align:center" href="StudentDelServlet?id=<%=s.getId() %>">删除</a>
+        			    <a  style="display:block;text-align:center" href="stuch.jsp?id=<%=s.getId() %>">修改</a> </td>
         		</tr>
         		<%
         	}
     	}
+    	
+    	
     	%>
+    </table>
+    <table>
+    	<tr>
+
+        			<td>
+        			<a style="display:block;text-align:center" href="stuins.jsp" >增加</a>
+        			</td>
+        			<td>
+        			<a style="display:block;text-align:center" href="stuser.jsp">查找</a>
+        			</td>
+        		</tr>
     </table>
   </body>
 </html>
